@@ -3,62 +3,64 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>정비노트</title>
+    <link rel="stylesheet" href="./css/reset.css" />
+    <link rel="stylesheet" href="./css/style.css" />
   </head>
   <body>
     <header>
-      <div>
+      <div class="header-left">
         <a href="./index.html"> 정비노트 </a>
         <nav>
-          <a href="./index.html">대시보드</a>
+          <a href="./index.html" class="active">대시보드</a>
           <a href="./vehicle-management.html">차량관리</a>
-          <a href=""></a>
-          <a href=""></a>
+          <a href="./maintenance-history.html">정비이력</a>
+          <a href="./customer-consultation.html">고객상담</a>
         </nav>
       </div>
-      <div>
-        <img src="" alt="" />
+      <div class="header-right">
+        <div class="no-profile">김</div>
         <span>김정비 사장님</span>
       </div>
     </header>
     <main>
-      <section>
+      <section class="title">
         <div>
-          <h2>대시보드</h2>
+          <h1>대시보드</h1>
           <p>오늘 정비소 현황 한눈에 보기</p>
         </div>
         <span>2026년 9월 8일 (화)</span>
       </section>
-      <section>
-        <div>
+      <section class="card-section">
+        <div class="card">
           <p>총 차량 수</p>
-          <p>42</p>
-          <p>이번 달 신규 +3</p>
+          <p class="point">42</p>
+          <p class="green">이번 달 신규 +3</p>
         </div>
-        <div>
+        <div class="card">
           <p>오늘 입고</p>
-          <p>3</p>
+          <p class="point">3</p>
           <p>정비 중 2 · 대기 1</p>
         </div>
-        <div>
+        <div class="card">
           <p>정비 예정</p>
-          <p>7</p>
+          <p class="orange">7</p>
           <p>이번 주 4건</p>
         </div>
-        <div>
+        <div class="card">
           <p>이번달 완료</p>
-          <p>128</p>
-          <p>지난달 대비 +12</p>
+          <p class="point">128</p>
+          <p class="green">지난달 대비 +12</p>
         </div>
       </section>
-      <section>
-        <div>
-          <div>
-            <div>
-              <h3>최근 정비 이력</h3>
+      <section class="card-section">
+        <div class="card extra">
+          <div class="card-title">
+            <div class="title-left">
+              <h2>최근 정비 이력</h2>
               <span>3건</span>
             </div>
-            <button>전체보기</button>
+            <a href="./maintenance-history.html">전체보기</a>
           </div>
           <table>
             <tr>
@@ -90,8 +92,8 @@
             </tr>
           </table>
         </div>
-        <div>
-          <h3>다가오는 정비 일정</h3>
+        <div class="card">
+          <h2>다가오는 정비 일정</h2>
         </div>
       </section>
     </main>

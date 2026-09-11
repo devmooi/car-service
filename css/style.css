@@ -1,0 +1,138 @@
+:root {
+  --primary-navy: #1e3a5f;
+  --background: #f4f6f8;
+  --text-gray: #5b636e;
+  --border: #e4e8ec;
+  --status-success: #1e8e5a;
+  --accent-orange: #f26a1b;
+  --bg-gray: #f8fafb;
+}
+header {
+  position: fixed;
+  width: 100%;
+  height: 60px;
+  background-color: var(--primary-navy);
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 5px 20px;
+}
+.header-left {
+  display: flex;
+  align-items: center;
+  height: 100%;
+  gap: 15px;
+}
+.header-left > a {
+  display: flex;
+  align-items: center;
+  height: 100%;
+  font-weight: bold;
+  letter-spacing: 5px;
+  font-size: 1.2rem;
+}
+.header-left nav {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+.header-left nav a {
+  padding: 8px 14px;
+  justify-content: center;
+  border-radius: 8px;
+}
+.header-left nav a:hover,
+.header-left nav a.active {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+.header-right {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+.header-right .no-profile {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background: #2c4e78;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+main {
+  padding: 60px;
+  padding-top: 120px;
+  background-color: var(--background);
+}
+main .title {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+main .title p,
+main .title span {
+  color: #5b636e;
+}
+.card-section {
+  display: flex;
+  gap: 15px;
+  margin-top: 20px;
+}
+.card-section .card {
+  flex: 1;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 15px;
+  background-color: white;
+}
+.card-section .card.extra {
+  flex-grow: 2;
+}
+.card-section .card p {
+  color: var(--text-gray);
+}
+.card-section .card p:first-child {
+  font-weight: bold;
+  font-size: 0.9rem;
+}
+.card-section .card p:nth-child(2) {
+  font-size: 2rem;
+  font-weight: bold;
+}
+.card-section .card p:last-child {
+  font-size: 0.8rem;
+}
+.card-section .card .point {
+  color: var(--primary-navy);
+}
+.card-section .card .green {
+  color: var(--status-success);
+}
+.card-section .card .orange {
+  color: var(--accent-orange);
+}
+.card-section .card h2 {
+  font-size: 1.1rem;
+}
+.card .card-title {
+  display: flex;
+  justify-content: space-between;
+}
+.card .title-left {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+.card .title-left span {
+  background-color: var(--bg-gray);
+  border: 1px solid var(--border);
+  padding: 2px 10px;
+  border-radius: 12px;
+  color: var(--text-gray);
+}
+.card .card-title a {
+  color: var(--text)
+  border: 1px solid var(--border);
+  background-color: var(--background);
+}
