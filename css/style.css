@@ -132,7 +132,7 @@ main .title span {
   color: var(--text-gray);
 }
 .card .card-title a {
-  color: var(--text)
+  color: var(--text-gray);
   border: 1px solid var(--border);
   background-color: var(--background);
 }
