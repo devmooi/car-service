@@ -112,6 +112,15 @@ main {
   color: var(--status-gray);
 }
 
+.plate {
+  display: inline-block;
+  background-color: var(--badge-d1-bg);
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
 @media (max-width: 768px) {
   main {
     padding: 92px 24px 60px;

@@ -1,5 +1,6 @@
 @import url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css');
 @import url('./variables.css');
+@import url('./form.css');
 
 body {
   font-family: 'Pretendard', -apple-system, BlinkMacSystemFont, system-ui, Roboto, 'Helvetica Neue', 'Segoe UI', 'Apple SD Gothic Neo', 'Noto Sans KR', sans-serif;
@@ -40,34 +41,6 @@ body {
   font-size: 0.825rem;
   color: var(--text-gray);
   margin-bottom: 10px;
-}
-
-.field {
-  display: flex;
-  flex-direction: column;
-  gap: 6px;
-}
-
-.field label {
-  font-size: 0.825rem;
-  font-weight: 600;
-  color: var(--text-primary);
-}
-
-.input {
-  width: 100%;
-  padding: 12px 10px;
-  border: 1px solid var(--border);
-  border-radius: 10px;
-  background-color: var(--card-bg);
-  font-size: 0.875rem;
-  color: var(--text-primary);
-}
-
-.input:focus {
-  outline: none;
-  border-color: var(--primary-navy);
-  box-shadow: 0 0 0 3px var(--badge-d1-bg);
 }
 
 .btn-login {

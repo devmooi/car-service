@@ -136,14 +136,8 @@
 }
 
 .plate {
-  display: inline-block;
   font-size: 0.775rem;
-  font-weight: 600;
   letter-spacing: 0.02em;
-  color: var(--text-primary);
-  background-color: var(--badge-d1-bg);
-  border: 1px solid var(--border);
-  border-radius: 5px;
   padding: 2px 6px;
 }
 

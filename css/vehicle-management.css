@@ -73,13 +73,9 @@
   margin-bottom: 10px;
 }
 
-.card-header .car-number {
-  background-color: var(--badge-d1-bg);
-  border: 1px solid var(--border);
+.card-header .plate {
   padding: 4px 6px;
-  border-radius: 4px;
   font-size: 0.9rem;
-  font-weight: 600;
 }
 
 .card-header .fuel-type {

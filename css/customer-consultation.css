@@ -1,4 +1,5 @@
 @import url("./layout.css");
+@import url("./form.css");
 
 .form-card {
   max-width: 1680px;
@@ -38,40 +39,11 @@
   gap: 12px;
 }
 
-.field {
-  display: flex;
-  flex-direction: column;
-  gap: 6px;
-}
-
-.field label {
-  font-size: 0.75rem;
-  font-weight: 600;
-  color: var(--text-gray);
-}
-
 .field label .hint {
   font-size: 0.7rem;
   color: var(--text-muted);
   font-weight: 400;
   margin-left: 4px;
-}
-
-.input {
-  width: 100%;
-  height: 38px;
-  padding: 0 12px;
-  border: 1px solid var(--border);
-  border-radius: 10px;
-  background-color: var(--card-bg);
-  font-size: 0.825rem;
-  color: var(--text-primary);
-}
-
-.input:focus {
-  outline: none;
-  border-color: var(--primary-navy);
-  box-shadow: 0 0 0 3px var(--badge-d1-bg);
 }
 
 .segmented {
