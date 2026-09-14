@@ -1,35 +1,45 @@
 <!doctype html>
 <html lang="ko">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>정비노트 - 고객상담</title>
-    <link rel="stylesheet" href="./css/reset.css" />
-    <link rel="stylesheet" href="./css/style.css" />
-  </head>
-  <body>
-    <header>
-      <div class="header-left">
-        <a href="./index.html"> 정비노트 </a>
-        <nav>
-          <a href="./index.html">대시보드</a>
-          <a href="./vehicle-management.html">차량관리</a>
-          <a href="./maintenance-history.html">정비이력</a>
-          <a href="./customer-consultation.html">고객상담</a>
-        </nav>
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>정비노트 - 고객상담</title>
+  <link rel="stylesheet" href="./css/reset.css" />
+  <link rel="stylesheet" href="./css/customer-consultation.css" />
+</head>
+
+<body>
+  <header>
+    <div class="header-left">
+      <button type="button" class="menu-toggle" id="menuToggle" aria-label="메뉴 열기" aria-expanded="false">
+        <span class="hamburger-bar"></span>
+        <span class="hamburger-bar"></span>
+        <span class="hamburger-bar"></span>
+      </button>
+      <a href="./index.html" class="logo">정비노트</a>
+      <nav id="navMenu">
+        <a href="./index.html">대시보드</a>
+        <a href="./vehicle-management.html">차량관리</a>
+        <a href="./maintenance-history.html">정비 이력</a>
+        <a href="./customer-consultation.html" class="active">고객 상담</a>
+      </nav>
+    </div>
+    <div class="header-right">
+      <div class="no-profile">김</div>
+      <span class="user-name">김정비 사장님</span>
+    </div>
+  </header>
+  <div class="menu-overlay" id="menuOverlay"></div>
+  <main>
+    <section class="title-section">
+      <div>
+        <h1>고객 상담 접수</h1>
+        <p>전화 및 방문 접수 내용을 기록하고 견적을 작성합니다</p>
       </div>
-      <div class="header-right">
-        <img src="" alt="" />
-        <span>김정비 사장님</span>
-      </div>
-    </header>
-    <main>
-      <section>
-        <div>
-          <h2>고객상담</h2>
-          <p>고객 문의 및 상담 내역 관리</p>
-        </div>
-      </section>
-    </main>
-  </body>
+    </section>
+  </main>
+  <script src="./js/menu.js"></script>
+</body>
+
 </html>

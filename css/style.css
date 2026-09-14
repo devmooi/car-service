@@ -1,73 +1,5 @@
-@import url('./header.css');
+@import url('./layout.css');
 
-:root {
-  /* Dashboard Status Colors */
-  --status-success: #1e8e5a;
-  --status-success-bg: #e6f4ec;
-  --status-blue: #2563a8;
-  --status-blue-bg: #e7eff8;
-  --status-gray: #5b636e;
-  --status-gray-bg: #f0f2f5;
-
-  /* Dashboard Accent Colors */
-  --accent-orange: #f26a1b;
-  --accent-orange-bg: #fdede1;
-  --badge-d1-bg: #e9eef4;
-  --badge-d1-text: #2563a8;
-  --bg-gray: #f8fafb;
-}
-
-/* ==========================================================================
-   Main Layout
-   ========================================================================== */
-main {
-  width: 100%;
-  max-width: 1680px;
-  margin: 0 auto;
-  padding: 108px 32px 80px;
-  /* 60px(헤더 높이) + 48px(상단 여백) */
-  background-color: var(--background);
-  min-height: 100vh;
-  overflow-x: hidden;
-  box-sizing: border-box;
-}
-
-/* ==========================================================================
-   Title Section
-   ========================================================================== */
-.title-section,
-main .title {
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-end;
-  margin-bottom: 24px;
-}
-
-.title-section h1,
-main .title h1 {
-  font-size: 1.45rem;
-  font-weight: 700;
-  color: var(--text-primary);
-  line-height: 1.2;
-  margin-bottom: 6px;
-}
-
-.title-section p,
-main .title p {
-  font-size: 0.875rem;
-  color: var(--text-gray);
-}
-
-.title-section .today-date,
-main .title span {
-  font-size: 0.875rem;
-  color: var(--text-gray);
-  white-space: nowrap;
-}
-
-/* ==========================================================================
-   Common Card Component
-   ========================================================================== */
 .card {
   background-color: var(--card-bg);
   border: 1px solid var(--border);
@@ -76,9 +8,6 @@ main .title span {
   min-width: 0;
 }
 
-/* ==========================================================================
-   Top Stat Cards Grid (4 columns)
-   ========================================================================== */
 .stat-grid,
 .card-section {
   display: grid;
@@ -131,9 +60,6 @@ main .title span {
   color: var(--status-success);
 }
 
-/* ==========================================================================
-   Dashboard Main Content (2 columns)
-   ========================================================================== */
 .dashboard-content {
   display: grid;
   grid-template-columns: 2.1fr 1fr;
@@ -212,9 +138,6 @@ main .title span {
   border-color: #cbd5e1;
 }
 
-/* ==========================================================================
-   Recent Maintenance History Table
-   ========================================================================== */
 .table-container {
   width: 100%;
   max-width: 100%;
@@ -222,7 +145,6 @@ main .title span {
   -webkit-overflow-scrolling: touch;
 }
 
-/* 깔끔한 가로 스크롤바 디자인 */
 .table-container::-webkit-scrollbar {
   height: 6px;
 }
@@ -331,7 +253,6 @@ main .title span {
   padding-right: 14px;
 }
 
-/* Status Badges */
 .status-badge {
   display: inline-flex;
   align-items: center;
@@ -365,9 +286,6 @@ main .title span {
   color: var(--status-gray);
 }
 
-/* ==========================================================================
-   Upcoming Schedule List
-   ========================================================================== */
 .schedule-list {
   list-style: none;
   display: flex;
@@ -424,9 +342,6 @@ main .title span {
   color: var(--text-muted);
 }
 
-/* ==========================================================================
-   Responsive Adaptations
-   ========================================================================== */
 @media (max-width: 1024px) {
 
   .stat-grid,
@@ -439,12 +354,6 @@ main .title span {
   }
 }
 
-@media (max-width: 768px) {
-  main {
-    padding: 92px 48px 60px;
-  }
-}
-
 @media (max-width: 640px) {
   main {
     padding: 84px 24px 48px;
@@ -453,12 +362,5 @@ main .title span {
   .stat-grid,
   .card-section {
     grid-template-columns: 1fr;
-  }
-
-  .title-section,
-  main .title {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 8px;
   }
 }

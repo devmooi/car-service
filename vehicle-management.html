@@ -33,36 +33,113 @@
   </header>
   <div class="menu-overlay" id="menuOverlay"></div>
   <main>
-    <section>
+    <section class="title-section">
       <div>
-        <h2>차량관리</h2>
-        <p>등록 차량 현황 및 정보 관리</p>
+        <h1>차량 관리</h1>
+        <p>등록된 고객 차량 9대</p>
+      </div>
+      <button type="button" class="btn-vehicle-add">
+        차량 등록
+      </button>
+    </section>
+    <section class="vehicle-search">
+      <input type="text" placeholder="차량명 / 번호로 검색">
+    </section>
+    <section class="card-section">
+      <div class="card vehicle-card">
+        <div class="card-header">
+          <span class="car-number">12가 3456</span>
+          <span class="fuel-type">가솔린</span>
+        </div>
+        <div class="card-body">
+          <p class="car-name">그랜저 IG</p>
+          <p><span class="car-year">2019년식</span><span class="service-count">정비 7건</span></p>
+        </div>
+        <div class="card-footer">
+          마지막 정비 <span class="last-service-date">2026-09-01</span> <span class="last-service-item">엔진오일 교환</span>
+        </div>
+      </div>
+      <div class="card vehicle-card">
+        <div class="card-header">
+          <span class="car-number">34나 7890</span>
+          <span class="fuel-type">디젤</span>
+        </div>
+        <div class="card-body">
+          <p class="car-name">스포티지</p>
+          <p><span class="car-year">2021년식</span><span class="service-count">정비 4건</span></p>
+        </div>
+        <div class="card-footer">
+          마지막 정비 <span class="last-service-date">2016-09-01</span> <span class="last-service-item">브레이크 패드 교체</span>
+        </div>
+      </div>
+      <div class="card vehicle-card">
+        <div class="card-header">
+          <span class="car-number">56다 1234</span>
+          <span class="fuel-type">가솔린</span>
+        </div>
+        <div class="card-body">
+          <p class="car-name">아반떼 CN7</p>
+          <p><span class="car-year">2022년식</span><span class="service-count">정비 3건</span></p>
+        </div>
+        <div class="card-footer">
+          마지막 정비 <span class="last-service-date">2026-08-31</span> <span class="last-service-item">정기점검</span>
+        </div>
+      </div>
+      <div class="card vehicle-card">
+        <div class="card-header">
+          <span class="car-number">78라 5678</span>
+          <span class="fuel-type">디젤</span>
+        </div>
+        <div class="card-body">
+          <p class="car-name">카니발</p>
+          <p><span class="car-year">2020년식</span><span class="service-count">정비 6건</span></p>
+        </div>
+        <div class="card-footer">
+          마지막 정비 <span class="last-service-date">2026-08-31</span> <span class="last-service-item">타이어 4본 교체</span>
+        </div>
+      </div>
+      <div class="card vehicle-card">
+        <div class="card-header">
+          <span class="car-number">90마 1122</span>
+          <span class="fuel-type">하이브리드</span>
+        </div>
+        <div class="card-body">
+          <p class="car-name">쏘렌토 하이브리드</p>
+          <p><span class="car-year">2023년식</span><span class="service-count">정비 2건</span></p>
+        </div>
+        <div class="card-footer">
+          마지막 정비 <span class="last-service-date">2026-09-05</span> <span class="last-service-item">냉각수 보충</span>
+        </div>
+      </div>
+      <div class="card vehicle-card">
+        <div class="card-header">
+          <span class="car-number">45바 3344</span>
+          <span class="fuel-type">전기</span>
+        </div>
+        <div class="card-body">
+          <p class="car-name">EV6</p>
+          <p><span class="car-year">2024년식</span><span class="service-count">정비 1건</span></p>
+        </div>
+        <div class="card-footer">
+          마지막 정비 <span class="last-service-date">2026-09-10</span> <span class="last-service-item">타이어 공기압 점검</span>
+        </div>
+      </div>
+      <div class="card vehicle-card">
+        <div class="card-header">
+          <span class="car-number">67사 5566</span>
+          <span class="fuel-type">가솔린</span>
+        </div>
+        <div class="card-body">
+          <p class="car-name">K5</p>
+          <p><span class="car-year">2018년식</span><span class="service-count">정비 9건</span></p>
+        </div>
+        <div class="card-footer">
+          마지막 정비 <span class="last-service-date">2026-08-20</span> <span class="last-service-item">브레이크 오일 교환</span>
+        </div>
       </div>
     </section>
   </main>
-  <script>
-    const menuToggle = document.getElementById('menuToggle');
-    const navMenu = document.getElementById('navMenu');
-    const menuOverlay = document.getElementById('menuOverlay');
-
-    function toggleMenu(open) {
-      const shouldOpen = typeof open === 'boolean' ? open : !navMenu.classList.contains('active');
-      navMenu.classList.toggle('active', shouldOpen);
-      menuToggle.classList.toggle('active', shouldOpen);
-      menuOverlay.classList.toggle('active', shouldOpen);
-      menuToggle.setAttribute('aria-expanded', String(shouldOpen));
-      menuToggle.setAttribute('aria-label', shouldOpen ? '메뉴 닫기' : '메뉴 열기');
-    }
-
-    menuToggle.addEventListener('click', () => toggleMenu());
-    menuOverlay.addEventListener('click', () => toggleMenu(false));
-
-    document.addEventListener('keydown', (e) => {
-      if (e.key === 'Escape' && navMenu.classList.contains('active')) {
-        toggleMenu(false);
-      }
-    });
-  </script>
+  <script src="./js/menu.js"></script>
 </body>
 
 </html>

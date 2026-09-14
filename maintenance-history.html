@@ -1,35 +1,56 @@
 <!doctype html>
 <html lang="ko">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>정비노트 - 정비이력</title>
-    <link rel="stylesheet" href="./css/reset.css" />
-    <link rel="stylesheet" href="./css/style.css" />
-  </head>
-  <body>
-    <header>
-      <div class="header-left">
-        <a href="./index.html"> 정비노트 </a>
-        <nav>
-          <a href="./index.html">대시보드</a>
-          <a href="./vehicle-management.html">차량관리</a>
-          <a href="./maintenance-history.html">정비이력</a>
-          <a href="./customer-consultation.html">고객상담</a>
-        </nav>
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>정비노트 - 정비이력</title>
+  <link rel="stylesheet" href="./css/reset.css" />
+  <link rel="stylesheet" href="./css/maintenance-history.css" />
+</head>
+
+<body>
+  <header>
+    <div class="header-left">
+      <button type="button" class="menu-toggle" id="menuToggle" aria-label="메뉴 열기" aria-expanded="false">
+        <span class="hamburger-bar"></span>
+        <span class="hamburger-bar"></span>
+        <span class="hamburger-bar"></span>
+      </button>
+      <a href="./index.html" class="logo">정비노트</a>
+      <nav id="navMenu">
+        <a href="./index.html">대시보드</a>
+        <a href="./vehicle-management.html">차량관리</a>
+        <a href="./maintenance-history.html" class="active">정비 이력</a>
+        <a href="./customer-consultation.html">고객 상담</a>
+      </nav>
+    </div>
+    <div class="header-right">
+      <div class="no-profile">김</div>
+      <span class="user-name">김정비 사장님</span>
+    </div>
+  </header>
+  <div class="menu-overlay" id="menuOverlay"></div>
+  <main>
+    <section class="title-section">
+      <div>
+        <h1>정비이력</h1>
+        <p>차량별 정비 기록과 상세 내역</p>
       </div>
-      <div class="header-right">
-        <img src="" alt="" />
-        <span>김정비 사장님</span>
+      <button type="button" class="btn-add-history">
+        정비 기록 추가
+      </button>
+    </section>
+    <section>
+      <div>
+        <h2>정비 목록</h2>
       </div>
-    </header>
-    <main>
-      <section>
-        <div>
-          <h2>정비이력</h2>
-          <p>차량별 정비 및 수리 내역 관리</p>
-        </div>
-      </section>
-    </main>
-  </body>
+      <div>
+        <h2>엔진오일 교환, 에어필터 교환</h2>
+      </div>
+    </section>
+  </main>
+  <script src="./js/menu.js"></script>
+</body>
+
 </html>
