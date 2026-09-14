@@ -1,1 +1,255 @@
-@import url('./layout.css');
+@import url("./layout.css");
+
+.form-card {
+  max-width: 1680px;
+  margin: 0 auto;
+  background-color: var(--card-bg);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.02);
+}
+
+.form-sec {
+  padding: 18px;
+  border-bottom: 1px solid var(--border-light);
+}
+
+.form-sec:last-child {
+  border-bottom: none;
+}
+
+.form-sec h3 {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.825rem;
+  font-weight: 700;
+  color: var(--primary-navy);
+  margin-bottom: 14px;
+}
+
+.form-sec h3 .spacer {
+  margin-left: auto;
+}
+
+.grid-2 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.field label {
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--text-gray);
+}
+
+.field label .hint {
+  font-size: 0.7rem;
+  color: var(--text-muted);
+  font-weight: 400;
+  margin-left: 4px;
+}
+
+.input {
+  width: 100%;
+  height: 38px;
+  padding: 0 12px;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  background-color: var(--card-bg);
+  font-size: 0.825rem;
+  color: var(--text-primary);
+}
+
+.input:focus {
+  outline: none;
+  border-color: var(--primary-navy);
+  box-shadow: 0 0 0 3px var(--badge-d1-bg);
+}
+
+.segmented {
+  display: inline-flex;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.segmented button {
+  height: 36px;
+  padding: 0 18px;
+  border: none;
+  border-right: 1px solid var(--border);
+  background-color: var(--card-bg);
+  font-size: 0.825rem;
+  font-weight: 500;
+  color: var(--text-gray);
+  cursor: pointer;
+}
+
+.segmented button:last-child {
+  border-right: none;
+}
+
+.segmented button.active {
+  background-color: var(--primary-navy);
+  color: white;
+}
+
+.btn-add-row {
+  display: inline-flex;
+  align-items: center;
+  height: 32px;
+  padding: 0 12px;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  background-color: var(--card-bg);
+  font-size: 0.775rem;
+  font-weight: 500;
+  color: var(--text-gray);
+  cursor: pointer;
+}
+
+.items-head,
+.item-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr 132px 34px;
+  gap: 8px;
+  align-items: center;
+}
+
+.items-head {
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: var(--text-muted);
+  padding: 0 2px;
+  margin-bottom: 8px;
+}
+
+.item-row {
+  margin-bottom: 8px;
+}
+
+.item-row input {
+  width: 100%;
+  height: 38px;
+  padding: 0 12px;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  background-color: var(--card-bg);
+  font-size: 0.825rem;
+  color: var(--text-primary);
+}
+
+.c-cost input {
+  text-align: right;
+}
+
+.del {
+  width: 32px;
+  height: 38px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  background-color: var(--card-bg);
+  color: var(--text-muted);
+  font-size: 1rem;
+  line-height: 1;
+  cursor: pointer;
+}
+
+.del:hover {
+  color: #d64545;
+  border-color: #d64545;
+}
+
+.sum-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 8px;
+  padding-top: 16px;
+  border-top: 1px solid var(--border);
+}
+
+.sum-label {
+  font-size: 0.825rem;
+  font-weight: 600;
+  color: var(--text-gray);
+}
+
+.sum-value {
+  font-size: 1.35rem;
+  font-weight: 700;
+  color: var(--primary-navy);
+}
+
+.agree {
+  font-size: 0.775rem;
+  color: var(--text-gray);
+  line-height: 1.9;
+  background-color: var(--background);
+  border: 1px solid var(--border-light);
+  border-radius: 10px;
+  padding: 12px 14px;
+}
+
+.form-foot {
+  display: flex;
+  gap: 10px;
+  justify-content: flex-end;
+  padding: 18px;
+}
+
+.btn-ghost {
+  height: 38px;
+  padding: 0 16px;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  background-color: var(--card-bg);
+  color: var(--text-gray);
+  font-size: 0.875rem;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+.btn-accent {
+  height: 38px;
+  padding: 0 16px;
+  border: none;
+  border-radius: 8px;
+  background-color: var(--accent-orange);
+  color: white;
+  font-size: 0.875rem;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+@media (max-width: 640px) {
+  .grid-2 {
+    grid-template-columns: 1fr;
+  }
+
+  .items-head,
+  .item-row {
+    grid-template-columns: 1fr 1fr;
+    grid-auto-rows: min-content;
+  }
+
+  .c-cost {
+    grid-column: 1 / 2;
+  }
+
+  .del {
+    grid-column: 2 / 3;
+    justify-self: end;
+  }
+}

@@ -5,7 +5,7 @@ main {
   width: 100%;
   max-width: 1680px;
   margin: 0 auto;
-  padding: 108px 32px 80px;
+  padding: 108px 60px 80px;
   /* 60px(헤더 높이) + 48px(상단 여백) */
   background-color: var(--background);
   min-height: 100vh;
@@ -37,6 +37,79 @@ main {
   font-size: 0.875rem;
   color: var(--text-gray);
   white-space: nowrap;
+}
+
+.card {
+  background-color: var(--card-bg);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.02);
+  min-width: 0;
+}
+
+.card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.header-title {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.header-title h2 {
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: var(--text-primary);
+}
+
+.count-badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2px 9px;
+  background-color: var(--background);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  font-size: 0.75rem;
+  font-weight: 500;
+  color: var(--text-gray);
+}
+
+.status-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  padding: 3px 9px;
+  border-radius: 12px;
+  font-size: 0.75rem;
+  font-weight: 600;
+}
+
+.status-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background-color: currentColor;
+  display: inline-block;
+}
+
+.status-done {
+  background-color: var(--status-success-bg);
+  color: var(--status-success);
+}
+
+.status-process {
+  background-color: var(--status-blue-bg);
+  color: var(--status-blue);
+}
+
+.status-wait {
+  background-color: var(--status-gray-bg);
+  color: var(--status-gray);
 }
 
 @media (max-width: 768px) {

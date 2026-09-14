@@ -62,18 +62,14 @@
   margin-bottom: 24px;
 }
 
-.card {
-  background-color: var(--card-bg);
-  border: 1px solid var(--border);
-  border-radius: 14px;
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.02);
-  min-width: 0;
+.vehicle-card {
   padding: 16px;
 }
 
-.card-header {
+.vehicle-card .card-header {
   display: flex;
   justify-content: space-between;
+  align-items: flex-start;
   margin-bottom: 10px;
 }
 
@@ -87,11 +83,14 @@
 }
 
 .card-header .fuel-type {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   padding: 4px 10px;
   border: 1px solid var(--border);
   border-radius: 999px;
   background-color: var(--background);
-  font-size: 0.775rem;
+  font-size: 0.7rem;
   color: var(--text-muted);
 }
 
