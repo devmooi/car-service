@@ -1,36 +1,68 @@
 <!doctype html>
 <html lang="ko">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>정비노트 - 차량관리</title>
-    <meta name="description" content="정비소 차량과 정비 이력 관리" />
-    <link rel="stylesheet" href="./css/reset.css" />
-    <link rel="stylesheet" href="./css/style.css" />
-  </head>
-  <body>
-    <header>
-      <div class="header-left">
-        <a href="./index.html"> 정비노트 </a>
-        <nav>
-          <a href="./index.html">대시보드</a>
-          <a href="./vehicle-management.html">차량관리</a>
-          <a href="./maintenance-history.html">정비이력</a>
-          <a href="./customer-consultation.html">고객상담</a>
-        </nav>
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>정비노트 - 차량관리</title>
+  <meta name="description" content="정비소 차량과 정비 이력 관리" />
+  <link rel="stylesheet" href="./css/reset.css" />
+  <link rel="stylesheet" href="./css/vehicle-management.css" />
+</head>
+
+<body>
+  <header>
+    <div class="header-left">
+      <button type="button" class="menu-toggle" id="menuToggle" aria-label="메뉴 열기" aria-expanded="false">
+        <span class="hamburger-bar"></span>
+        <span class="hamburger-bar"></span>
+        <span class="hamburger-bar"></span>
+      </button>
+      <a href="./index.html" class="logo">정비노트</a>
+      <nav id="navMenu">
+        <a href="./index.html">대시보드</a>
+        <a href="./vehicle-management.html" class="active">차량관리</a>
+        <a href="./maintenance-history.html">정비 이력</a>
+        <a href="./customer-consultation.html">고객 상담</a>
+      </nav>
+    </div>
+    <div class="header-right">
+      <div class="no-profile">김</div>
+      <span class="user-name">김정비 사장님</span>
+    </div>
+  </header>
+  <div class="menu-overlay" id="menuOverlay"></div>
+  <main>
+    <section>
+      <div>
+        <h2>차량관리</h2>
+        <p>등록 차량 현황 및 정보 관리</p>
       </div>
-      <div class="header-right">
-        <img src="" alt="" />
-        <span>김정비 사장님</span>
-      </div>
-    </header>
-    <main>
-      <section>
-        <div>
-          <h2>차량관리</h2>
-          <p>등록 차량 현황 및 정보 관리</p>
-        </div>
-      </section>
-    </main>
-  </body>
+    </section>
+  </main>
+  <script>
+    const menuToggle = document.getElementById('menuToggle');
+    const navMenu = document.getElementById('navMenu');
+    const menuOverlay = document.getElementById('menuOverlay');
+
+    function toggleMenu(open) {
+      const shouldOpen = typeof open === 'boolean' ? open : !navMenu.classList.contains('active');
+      navMenu.classList.toggle('active', shouldOpen);
+      menuToggle.classList.toggle('active', shouldOpen);
+      menuOverlay.classList.toggle('active', shouldOpen);
+      menuToggle.setAttribute('aria-expanded', String(shouldOpen));
+      menuToggle.setAttribute('aria-label', shouldOpen ? '메뉴 닫기' : '메뉴 열기');
+    }
+
+    menuToggle.addEventListener('click', () => toggleMenu());
+    menuOverlay.addEventListener('click', () => toggleMenu(false));
+
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && navMenu.classList.contains('active')) {
+        toggleMenu(false);
+      }
+    });
+  </script>
+</body>
+
 </html>
