@@ -1,4 +1,4 @@
-@import url('./layout.css');
+@import url("./layout.css");
 
 .btn-vehicle-add {
   display: inline-flex;
@@ -15,9 +15,186 @@
 }
 
 .btn-vehicle-add::before {
-  content: '+';
+  content: "+";
   font-size: 1rem;
   line-height: 1;
+}
+
+.vehicle-modal-overlay {
+  display: flex;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 9999;
+  justify-content: center;
+  align-items: center;
+  padding: 24px;
+  background-color: rgba(22, 41, 63, 0.48);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.18s;
+}
+
+.vehicle-modal-overlay.open {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.vehicle-modal {
+  width: 440px;
+  max-width: 100%;
+  max-height: 100%;
+  overflow-y: auto;
+  border-radius: 20px;
+  background-color: var(--card-bg);
+  box-shadow: 0 12px 40px rgba(30, 58, 95, 0.16);
+  transform: translateY(8px) scale(0.98);
+  transition: transform 0.18s;
+}
+
+.vehicle-modal-overlay.open .vehicle-modal {
+  transform: none;
+}
+
+.vehicle-modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 22px 14px;
+}
+
+.vehicle-modal-header h2 {
+  font-size: 1rem;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  color: var(--text-primary);
+}
+
+.vehicle-modal-header button {
+  display: grid;
+  place-items: center;
+  width: 30px;
+  height: 30px;
+  padding: 0;
+  border: none;
+  border-radius: 6px;
+  background: none;
+  cursor: pointer;
+}
+
+.vehicle-modal-header button:hover {
+  background-color: var(--bg-gray);
+}
+
+.vehicle-modal-header img {
+  width: 18px;
+  height: 18px;
+}
+
+.vehicle-modal-body {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 12px;
+  padding: 6px 22px 4px;
+}
+
+.vehicle-modal-body > div {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  min-width: 0;
+}
+
+.vehicle-modal-body > div:nth-child(3),
+.vehicle-modal-body > div:nth-child(6) {
+  grid-column: 1 / -1;
+}
+
+.vehicle-modal-body label {
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--text-gray);
+}
+
+.vehicle-modal-body label span {
+  margin-left: 1px;
+  color: #d64545;
+}
+
+.vehicle-modal-body input,
+.vehicle-modal-body select {
+  width: 100%;
+  height: 38px;
+  padding: 0 12px;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  background-color: var(--card-bg);
+  color: var(--text-primary);
+  font-size: 0.8125rem;
+  box-sizing: border-box;
+}
+
+.vehicle-modal-body input::placeholder {
+  color: var(--text-muted);
+}
+
+.vehicle-modal-body input:focus,
+.vehicle-modal-body select:focus {
+  outline: none;
+  border-color: var(--primary-navy);
+  box-shadow: 0 0 0 3px #e9eef4;
+}
+
+.vehicle-modal-footer {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+  padding: 16px 22px 20px;
+}
+
+.vehicle-modal-footer button {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  height: 38px;
+  padding: 0 16px;
+  border: 1px solid transparent;
+  border-radius: 10px;
+  font-size: 0.8125rem;
+  font-weight: 600;
+  white-space: nowrap;
+  cursor: pointer;
+  transition:
+    background-color 0.15s,
+    border-color 0.15s;
+}
+
+.vehicle-modal-footer button[type="reset"] {
+  border-color: var(--border);
+  background-color: var(--card-bg);
+  color: var(--text-gray);
+}
+
+.vehicle-modal-footer button[type="reset"]:hover {
+  background-color: var(--bg-gray);
+  color: var(--text-primary);
+}
+
+.vehicle-modal-footer button[type="submit"] {
+  background-color: var(--primary-navy);
+  color: #fff;
+}
+
+.vehicle-modal-footer button[type="submit"]:hover {
+  background-color: var(--navy-dark);
+}
+
+@media (max-width: 640px) {
+  .vehicle-modal-body {
+    grid-template-columns: 1fr;
+  }
 }
 
 .vehicle-search {
@@ -42,14 +219,14 @@
 }
 
 .vehicle-search::before {
-  content: '';
+  content: "";
   position: absolute;
   top: 50%;
   left: 12px;
   width: 16px;
   height: 16px;
   transform: translateY(-50%);
-  background-image: url('../assets/search.svg');
+  background-image: url("../assets/search.svg");
   background-repeat: no-repeat;
   background-size: contain;
   pointer-events: none;
@@ -107,7 +284,7 @@
 }
 
 .card-body span {
-  color: var(--text-gray)
+  color: var(--text-gray);
 }
 
 .card-footer {

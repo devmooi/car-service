@@ -1,156 +1,265 @@
 <!doctype html>
 <html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>정비노트 - 정비이력</title>
+    <link rel="stylesheet" href="./css/reset.css" />
+    <link rel="stylesheet" href="./css/maintenance-history.css" />
+    <script defer src="./js/data.js"></script>
+    <script
+      defer
+      src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"
+    ></script>
+  </head>
 
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>정비노트 - 정비이력</title>
-  <link rel="stylesheet" href="./css/reset.css" />
-  <link rel="stylesheet" href="./css/maintenance-history.css" />
-</head>
-
-<body>
-  <header>
-    <div class="header-left">
-      <button type="button" class="menu-toggle" id="menuToggle" aria-label="메뉴 열기" aria-expanded="false">
-        <span class="hamburger-bar"></span>
-        <span class="hamburger-bar"></span>
-        <span class="hamburger-bar"></span>
-      </button>
-      <a href="./index.html" class="logo">정비노트</a>
-      <nav id="navMenu">
-        <a href="./index.html">대시보드</a>
-        <a href="./vehicle-management.html">차량관리</a>
-        <a href="./maintenance-history.html" class="active">정비 이력</a>
-        <a href="./customer-consultation.html">고객 상담</a>
-      </nav>
-    </div>
-    <div class="header-right">
-      <div class="no-profile">김</div>
-      <span class="user-name">김정비 사장님</span>
-    </div>
-  </header>
-  <div class="menu-overlay" id="menuOverlay"></div>
-  <main>
-    <section class="title-section">
-      <div>
-        <h1>정비이력</h1>
-        <p>차량별 정비 기록과 상세 내역</p>
+  <body>
+    <header>
+      <div class="header-left">
+        <button
+          type="button"
+          class="menu-toggle"
+          id="menuToggle"
+          aria-label="메뉴 열기"
+          aria-expanded="false"
+        >
+          <span class="hamburger-bar"></span>
+          <span class="hamburger-bar"></span>
+          <span class="hamburger-bar"></span>
+        </button>
+        <a href="./index.html" class="logo">정비노트</a>
+        <nav id="navMenu">
+          <a href="./index.html">대시보드</a>
+          <a href="./vehicle-management.html">차량관리</a>
+          <a href="./maintenance-history.html" class="active">정비 이력</a>
+          <a href="./customer-consultation.html">고객 상담</a>
+        </nav>
       </div>
-      <button type="button" class="btn-add-history">
-        정비 기록 추가
-      </button>
-    </section>
-
-    <section class="history-split">
-      <div class="card history-list-card">
-        <div class="card-header">
-          <div class="header-title">
-            <h2>정비 목록</h2>
-            <span class="count-badge">8건</span>
-          </div>
-        </div>
-        <div class="filter-chips">
-          <button type="button" class="chip active">전체</button>
-          <button type="button" class="chip">일반 정비</button>
-          <button type="button" class="chip">보험 수리</button>
-        </div>
-        <div class="history-list">
-          <div class="history-item active">
-            <div class="history-item-top">
-              <span class="history-item-name">엔진오일 교환 외 1</span>
-              <span class="status-badge status-done"><span class="status-dot"></span>완료</span>
-            </div>
-            <div class="history-item-meta">08.31 · 그랜저 IG · 73,000원</div>
-          </div>
-          <div class="history-item">
-            <div class="history-item-top">
-              <span class="history-item-name">앞 브레이크 패드 교체 외 1</span>
-              <span class="status-badge status-process"><span class="status-dot"></span>진행중</span>
-            </div>
-            <div class="history-item-meta">08.31 · 스포티지 · 180,000원</div>
-          </div>
-          <div class="history-item">
-            <div class="history-item-top">
-              <span class="history-item-name">정기점검(엔진·하체·전기)</span>
-              <span class="status-badge status-done"><span class="status-dot"></span>완료</span>
-            </div>
-            <div class="history-item-meta">08.30 · 아반떼 CN7 · 45,000원</div>
-          </div>
-          <div class="history-item">
-            <div class="history-item-top">
-              <span class="history-item-name">타이어 4본 교체 외 1</span>
-              <span class="status-badge status-done"><span class="status-dot"></span>완료</span>
-            </div>
-            <div class="history-item-meta">08.30 · 카니발 · 520,000원</div>
-          </div>
-          <div class="history-item">
-            <div class="history-item-top">
-              <span class="history-item-name">에어컨 가스 충전 및 누설 점검</span>
-              <span class="status-badge status-wait"><span class="status-dot"></span>대기</span>
-            </div>
-            <div class="history-item-meta">08.29 · 쏘렌토 하이브리드 · 88,000원</div>
-          </div>
-          <div class="history-item">
-            <div class="history-item-top">
-              <span class="history-item-name">타이어 공기압 점검</span>
-              <span class="status-badge status-done"><span class="status-dot"></span>완료</span>
-            </div>
-            <div class="history-item-meta">08.29 · EV6 · 20,000원</div>
-          </div>
-          <div class="history-item">
-            <div class="history-item-top">
-              <span class="history-item-name">앞범퍼 교체·도색</span>
-              <span class="status-badge status-done"><span class="status-dot"></span>완료</span>
-            </div>
-            <div class="history-item-meta">08.28 · K5 · 470,000원</div>
-          </div>
-          <div class="history-item">
-            <div class="history-item-top">
-              <span class="history-item-name">냉각수 보충</span>
-              <span class="status-badge status-done"><span class="status-dot"></span>완료</span>
-            </div>
-            <div class="history-item-meta">08.20 · 그랜저 IG · 15,000원</div>
-          </div>
-        </div>
+      <div class="header-right">
+        <div class="no-profile">김</div>
+        <span class="user-name">김정비 사장님</span>
       </div>
-
-      <div class="card history-detail">
-        <div class="detail-header">
-          <div class="detail-title">
-            엔진오일 교환, 에어필터 교환
-            <span class="status-badge status-done"><span class="status-dot"></span>완료</span>
-          </div>
-          <div class="detail-car">그랜저 IG · <span class="plate">13가 5827</span> · 2019년식 가솔린</div>
+    </header>
+    <div class="menu-overlay" id="menuOverlay"></div>
+    <main>
+      <section class="title-section">
+        <div>
+          <h1>정비이력</h1>
+          <p>차량별 정비 기록과 상세 내역</p>
         </div>
-        <div class="detail-body">
-          <dl class="detail-kv">
-            <dt>정비일자</dt>
-            <dd>2026-08-31</dd>
-            <dt>구분</dt>
-            <dd>일반 정비</dd>
-            <dt>주행거리</dt>
-            <dd>82,430 km</dd>
-            <dt>담당</dt>
-            <dd>김성호</dd>
-            <dt>결제</dt>
-            <dd>카드</dd>
-          </dl>
-          <div class="work-list">
-            <div class="work-row"><span>엔진오일 교환</span><span class="work-cost">55,000원</span></div>
-            <div class="work-row"><span>에어필터 교환</span><span class="work-cost">18,000원</span></div>
-            <div class="work-total"><span>합계</span><span>73,000원</span></div>
+        <button type="button" class="btn-add-history">정비 기록 추가</button>
+      </section>
+
+      <section class="history-split">
+        <div class="card history-list-card">
+          <div class="card-header">
+            <div class="header-title">
+              <h2>정비 목록</h2>
+              <span class="count-badge">8건</span>
+            </div>
           </div>
-          <p class="detail-memo">다음 교환 주기 5,000km(약 3개월) 후 문자 안내 예정. 엔진 하부 미세 누유 — 경과 관찰, 다음 방문 시 재점검.</p>
-          <div class="detail-photos">
-            <div class="photo-placeholder">수리 전 사진</div>
-            <div class="photo-placeholder">수리 후 사진</div>
+          <div x-data="{tab: 'all'}">
+            <div class="filter-chips">
+              <button
+                type="button"
+                class="chip"
+                :class="{active: tab === 'all'}"
+                @click="tab = 'all'"
+              >
+                전체
+              </button>
+              <button
+                type="button"
+                class="chip"
+                :class="{active: tab === 'general'}"
+                @click="tab = 'general'"
+              >
+                일반 정비
+              </button>
+              <button
+                type="button"
+                class="chip"
+                :class="{active: tab === 'insurance'}"
+                @click="tab = 'insurance'"
+              >
+                보험 수리
+              </button>
+            </div>
+            <div class="history-list">
+              <div
+                class="history-item active"
+                data-type="general"
+                x-show="tab === 'all' || tab === $el.dataset.type"
+              >
+                <div class="history-item-top">
+                  <span class="history-item-name">엔진오일 교환 외 1</span>
+                  <span class="status-badge status-done"
+                    ><span class="status-dot"></span>완료</span
+                  >
+                </div>
+                <div class="history-item-meta">
+                  08.31 · 그랜저 IG · 73,000원
+                </div>
+              </div>
+              <div
+                class="history-item"
+                data-type="general"
+                x-show="tab === 'all' || tab === $el.dataset.type"
+              >
+                <div class="history-item-top">
+                  <span class="history-item-name"
+                    >앞 브레이크 패드 교체 외 1</span
+                  >
+                  <span class="status-badge status-process"
+                    ><span class="status-dot"></span>진행중</span
+                  >
+                </div>
+                <div class="history-item-meta">
+                  08.31 · 스포티지 · 180,000원
+                </div>
+              </div>
+              <div
+                class="history-item"
+                data-type="general"
+                x-show="tab === 'all' || tab === $el.dataset.type"
+              >
+                <div class="history-item-top">
+                  <span class="history-item-name"
+                    >정기점검(엔진·하체·전기)</span
+                  >
+                  <span class="status-badge status-done"
+                    ><span class="status-dot"></span>완료</span
+                  >
+                </div>
+                <div class="history-item-meta">
+                  08.30 · 아반떼 CN7 · 45,000원
+                </div>
+              </div>
+              <div
+                class="history-item"
+                data-type="general"
+                x-show="tab === 'all' || tab === $el.dataset.type"
+              >
+                <div class="history-item-top">
+                  <span class="history-item-name">타이어 4본 교체 외 1</span>
+                  <span class="status-badge status-done"
+                    ><span class="status-dot"></span>완료</span
+                  >
+                </div>
+                <div class="history-item-meta">08.30 · 카니발 · 520,000원</div>
+              </div>
+              <div
+                class="history-item"
+                data-type="general"
+                x-show="tab === 'all' || tab === $el.dataset.type"
+              >
+                <div class="history-item-top">
+                  <span class="history-item-name"
+                    >에어컨 가스 충전 및 누설 점검</span
+                  >
+                  <span class="status-badge status-wait"
+                    ><span class="status-dot"></span>대기</span
+                  >
+                </div>
+                <div class="history-item-meta">
+                  08.29 · 쏘렌토 하이브리드 · 88,000원
+                </div>
+              </div>
+              <div
+                class="history-item"
+                data-type="general"
+                x-show="tab === 'all' || tab === $el.dataset.type"
+              >
+                <div class="history-item-top">
+                  <span class="history-item-name">타이어 공기압 점검</span>
+                  <span class="status-badge status-done"
+                    ><span class="status-dot"></span>완료</span
+                  >
+                </div>
+                <div class="history-item-meta">08.29 · EV6 · 20,000원</div>
+              </div>
+              <div
+                class="history-item"
+                data-type="insurance"
+                x-show="tab === 'all' || tab === $el.dataset.type"
+              >
+                <div class="history-item-top">
+                  <span class="history-item-name">앞범퍼 교체·도색</span>
+                  <span class="status-badge status-done"
+                    ><span class="status-dot"></span>완료</span
+                  >
+                </div>
+                <div class="history-item-meta">08.28 · K5 · 470,000원</div>
+              </div>
+              <div
+                class="history-item"
+                data-type="general"
+                x-show="tab === 'all' || tab === $el.dataset.type"
+              >
+                <div class="history-item-top">
+                  <span class="history-item-name">냉각수 보충</span>
+                  <span class="status-badge status-done"
+                    ><span class="status-dot"></span>완료</span
+                  >
+                </div>
+                <div class="history-item-meta">
+                  08.20 · 그랜저 IG · 15,000원
+                </div>
+              </div>
+            </div>
           </div>
         </div>
-      </div>
-    </section>
-  </main>
-  <script src="./js/menu.js"></script>
-</body>
 
+        <div class="card history-detail">
+          <div class="detail-header">
+            <div class="detail-title">
+              엔진오일 교환, 에어필터 교환
+              <span class="status-badge status-done"
+                ><span class="status-dot"></span>완료</span
+              >
+            </div>
+            <div class="detail-car">
+              그랜저 IG · <span class="plate">13가 5827</span> · 2019년식 가솔린
+            </div>
+          </div>
+          <div class="detail-body">
+            <dl class="detail-kv">
+              <dt>정비일자</dt>
+              <dd>2026-08-31</dd>
+              <dt>구분</dt>
+              <dd>일반 정비</dd>
+              <dt>주행거리</dt>
+              <dd>82,430 km</dd>
+              <dt>담당</dt>
+              <dd>김성호</dd>
+              <dt>결제</dt>
+              <dd>카드</dd>
+            </dl>
+            <div class="work-list">
+              <div class="work-row">
+                <span>엔진오일 교환</span
+                ><span class="work-cost">55,000원</span>
+              </div>
+              <div class="work-row">
+                <span>에어필터 교환</span
+                ><span class="work-cost">18,000원</span>
+              </div>
+              <div class="work-total">
+                <span>합계</span><span>73,000원</span>
+              </div>
+            </div>
+            <p class="detail-memo">
+              다음 교환 주기 5,000km(약 3개월) 후 문자 안내 예정. 엔진 하부 미세
+              누유 — 경과 관찰, 다음 방문 시 재점검.
+            </p>
+            <div class="detail-photos">
+              <div class="photo-placeholder">수리 전 사진</div>
+              <div class="photo-placeholder">수리 후 사진</div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+    <script src="./js/menu.js"></script>
+  </body>
 </html>
