@@ -82,3 +82,59 @@ body {
 .login-foot .sep {
   color: var(--text-muted);
 }
+
+/* 계정 신청·로그인 — 입력 검사 메시지 */
+.field-msg {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+}
+
+.field-msg.ok,
+.form-result.ok {
+  color: var(--status-success);
+}
+
+.field-msg.error,
+.form-result.error {
+  color: var(--accent-orange);
+}
+
+.form-result {
+  min-height: 1.2em;
+  text-align: center;
+  font-size: 0.8rem;
+  font-weight: 600;
+}
+
+.btn-login:disabled {
+  background-color: var(--text-muted);
+  cursor: not-allowed;
+}
+
+/* 비밀번호 보기 버튼 — input 오른쪽 안쪽에 겹쳐서 */
+.pw-wrap {
+  position: relative;
+}
+
+.pw-wrap .input {
+  padding-right: 56px;
+}
+
+.pw-toggle {
+  position: absolute;
+  top: 50%;
+  right: 8px;
+  transform: translateY(-50%);
+  padding: 4px 8px;
+  border: none;
+  border-radius: 6px;
+  background: none;
+  color: var(--text-gray);
+  font-size: 0.75rem;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.pw-toggle:hover {
+  background-color: var(--border-light);
+}

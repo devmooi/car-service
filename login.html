@@ -21,18 +21,24 @@
       </div>
       <div class="field">
         <label for="lg-pw">비밀번호</label>
-        <input class="input" id="lg-pw" type="password" placeholder="비밀번호를 입력하세요" autocomplete="current-password">
+        <div class="pw-wrap">
+          <input class="input" id="lg-pw" type="password" placeholder="비밀번호를 입력하세요" autocomplete="current-password">
+          <button type="button" class="pw-toggle" data-target="lg-pw">보기</button>
+        </div>
       </div>
 
       <button class="btn-login" type="submit">로그인</button>
+      <p class="form-result error" id="login-result"></p>
 
       <p class="login-foot">
-        <a href="#">계정 신청</a>
+        <a href="./signup.html">계정 신청</a>
         <span class="sep">·</span>
         <a href="#">비밀번호를 잊으셨나요?</a>
       </p>
     </form>
   </section>
+  <script src="./js/password-toggle.js"></script>
+  <script src="./js/login.js"></script>
 </body>
 
 </html>
